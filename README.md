@@ -1,7 +1,7 @@
 # XSS-Keylogger PoC
 This is a simple PoC JavaScript keylogger to attach to a XSS vulnerability disclosure. It is made up of two PHP servers, one acts as the victim and the other acts as the attackers remote server.
 
-In a disclosure, you would just need to copy the code between the script tags in the victims index.php file, remove all comments and inject as you see fit (obviously making some adjustments to the target and remote variables);
+In a disclosure, you would just need to copy the code between the script tags in the victims index.php file, remove all comments, minify and inject as you see fit (obviously making some adjustments to the target and remote variables);
 ## Requirements:
 - Docker
 ## How to Run:
